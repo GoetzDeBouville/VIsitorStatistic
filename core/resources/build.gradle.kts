@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.statistics.core.data.network"
+    namespace = "com.statistics.core.resources"
     compileSdk = libs.versions.compileSdk.get().toInt()
 
     defaultConfig {
@@ -33,15 +33,10 @@ android {
 }
 
 dependencies {
-    implementation(project(":core:domain:models"))
-    implementation(project(":core:utils"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
-
-    implementation(libs.bundles.ktor)
-
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

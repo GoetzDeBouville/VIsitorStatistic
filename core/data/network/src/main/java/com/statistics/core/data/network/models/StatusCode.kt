@@ -1,4 +1,6 @@
-package com.statistics.core.data.network
+package com.statistics.core.data.network.models
+
+import com.statistics.domain.models.network.ErrorType
 
 @JvmInline
 value class StatusCode(val code: Int)
