@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.ksp)
+    alias(libs.plugins.hilt)
 }
 
 android {
@@ -33,8 +35,18 @@ android {
 }
 
 dependencies {
+    implementation(project(":feature:statistic:domain:api"))
     implementation(project(":core:data:di"))
+    implementation(project(":core:data:dto"))
+    implementation(project(":core:data:network"))
+    implementation(project(":core:domain:models"))
 
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.compiler)
+
+    implementation(libs.bundles.ktor)
+
+    implementation(libs.kotlinx.coroutines.core)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

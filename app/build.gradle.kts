@@ -43,6 +43,9 @@ android {
 }
 
 dependencies {
+    implementation(project(":core:presentation:nav"))
+    implementation(project(":feature:statistic:presentation"))
+    implementation(project(":core:presentation:utils"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -56,6 +59,7 @@ dependencies {
 
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
+    implementation(libs.androidx.navigation.compose)
 
 
     testImplementation(libs.junit)

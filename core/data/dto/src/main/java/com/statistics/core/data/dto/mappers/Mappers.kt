@@ -3,15 +3,15 @@ package com.statistics.core.data.dto.mappers
 import com.statistics.core.data.dto.FileDto
 import com.statistics.core.data.dto.StatisticDto
 import com.statistics.core.data.dto.UserDto
+import com.statistics.domain.models.EventStatistic
 import com.statistics.domain.models.File
-import com.statistics.domain.models.Statistic
 import com.statistics.domain.models.User
 
 fun FileDto.toDomain(): File =
     File(id = id, type = type, url = url)
 
-fun StatisticDto.toDomain(): Statistic =
-    Statistic(
+fun StatisticDto.toDomain(): EventStatistic =
+    EventStatistic(
         dates = dates,
         type = type,
         userId = userId

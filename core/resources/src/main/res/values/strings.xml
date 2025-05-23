@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="error_no_internet_connection">Нет подключения к интернету</string>
+    <string name="error_something_went_wrong">Что-то пошло не так</string>
+    <string name="error_nothing_found">По Вашему запросу ничего не найдено</string>
+</resources>

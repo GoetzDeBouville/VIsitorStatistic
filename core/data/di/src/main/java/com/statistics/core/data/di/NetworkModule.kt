@@ -23,7 +23,7 @@ import kotlinx.serialization.json.Json
 @Module
 @InstallIn(SingletonComponent::class)
 object NetworkModule {
-    private const val BASE_URL = "http://test.rikmasters.ru/api/"
+    private const val BASE_URL = "http://test.rikmasters.ru/"
     private const val CONNECTION_TIME_OUT_10_SEC = 10_000L
     private const val MAX_REQUEST_DELAY_10_SEC = 10_000L
     private const val MAX_RETRIES_NUM_3 = 3

@@ -8,6 +8,12 @@ java {
 }
 kotlin {
     compilerOptions {
-        jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_11
+        jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17
     }
+}
+
+dependencies {
+    implementation(project(":core:domain:models"))
+
+    implementation(libs.kotlinx.coroutines.core)
 }
