@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="visitor_nums">
+        <item quantity="one">%s посетитель</item>
+        <item quantity="few">%s посетителя</item>
+        <item quantity="many">%s посетителей</item>
+        <item quantity="other">%s посетителей</item>
+    </plurals>
+</resources>
