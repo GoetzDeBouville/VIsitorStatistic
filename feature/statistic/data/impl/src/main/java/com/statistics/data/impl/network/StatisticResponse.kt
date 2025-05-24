@@ -1,10 +1,10 @@
 package com.statistics.data.impl.network
 
-import com.statistics.core.data.dto.StatisticDto
-import com.statistics.core.data.dto.UserDto
+import com.statistics.data.impl.dto.StatisticsResponseDto
+import com.statistics.data.impl.dto.UsersResponseDto
 
 sealed interface StatisticResponse {
-    class EventList(val value: List<StatisticDto>) : StatisticResponse
+    class EventList(val value: StatisticsResponseDto) : StatisticResponse
 
-    class UserList(val value: List<UserDto>) : StatisticResponse
+    class UserList(val value: UsersResponseDto) : StatisticResponse
 }

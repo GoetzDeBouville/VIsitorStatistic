@@ -1,5 +1,6 @@
 package com.statistics.data.impl
 
+import android.util.Log
 import com.statistics.core.data.dto.mappers.toDomain
 import com.statistics.core.data.network.client.HttpNetworkClient
 import com.statistics.core.data.network.models.mapToErrorType
@@ -21,9 +22,11 @@ class UserStatisticRepositoryImpl @Inject constructor(
         val response = httpStatisticKtorClient.getResponse(StatisticRequest.UserStatistic)
         when (val body = response.body) {
             is StatisticResponse.UserList -> {
-                emit(Result.Success(body.value.map { it.toDomain() }))
+                emit(Result.Success(body.value.users.map { it.toDomain() }))
             }
+
             else -> {
+                Log.i(TAG, "getUsersStatistic = ${response.body}")
                 emit(Result.Error(response.resultCode.mapToErrorType()))
             }
         }
@@ -31,13 +34,19 @@ class UserStatisticRepositoryImpl @Inject constructor(
 
     override fun getEventStatistic(): Flow<Result<List<EventStatistic>, ErrorType>> = flow {
         val response = httpStatisticKtorClient.getResponse(StatisticRequest.EventStatistic)
+        Log.i(TAG, "getEventStatistic = ${response.body}")
         when (val body = response.body) {
             is StatisticResponse.EventList -> {
-                emit(Result.Success(body.value.map { it.toDomain() }))
+                emit(Result.Success(body.value.statistics.map { it.toDomain() }))
             }
+
             else -> {
                 emit(Result.Error(response.resultCode.mapToErrorType()))
             }
         }
+    }
+
+    private companion object {
+        val TAG = UserStatisticRepositoryImpl::class.simpleName
     }
 }
