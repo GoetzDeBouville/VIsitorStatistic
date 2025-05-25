@@ -1,3 +1,5 @@
+@file:Suppress("TooGenericExceptionCaught", "MagicNumber")
+
 package com.statistics.core.utils
 
 import java.time.LocalDate
@@ -26,4 +28,16 @@ fun Int.toDate(): LocalDate? {
     }
 
     return result
+}
+
+fun Int.declensionUsers(): String {
+    val lastTwoDigits = this % 100
+    val lastDigit = this % 10
+
+    return when {
+        lastTwoDigits in 11..19 -> "$this пользователей"
+        lastDigit == 1 -> "$this пользователь"
+        lastDigit in 2..4 -> "$this пользователя"
+        else -> "$this пользователей"
+    }
 }

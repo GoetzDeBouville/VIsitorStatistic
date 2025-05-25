@@ -23,11 +23,14 @@ import androidx.compose.ui.unit.dp
 import com.statistics.domain.models.EventCounter
 
 @Composable
-fun SubscribersBlock(eventCounter: EventCounter) {
+fun SubscribersBlock(
+    modifier: Modifier = Modifier,
+    eventCounter: EventCounter
+) {
     val subscribersCounterCurrentMonth = eventCounter.subscribersCounterCurrentMonth
     val unsubscribersCounterCurrentMonth = eventCounter.unsubscribersCounterCurrentMonth
     Card(
-        modifier = Modifier
+        modifier = modifier
             .fillMaxWidth(),
         shape = RoundedCornerShape(16.dp),
         colors = CardDefaults.cardColors(
@@ -79,10 +82,10 @@ fun SubscribersBlock(eventCounter: EventCounter) {
 @Composable
 private fun SubscribersBlockPreview() {
     Column {
-        SubscribersBlock(EventCounter(243, 160, 12, 43))
+        SubscribersBlock(eventCounter = EventCounter(243, 160, 12, 43))
         Spacer(modifier = Modifier.height(16.dp))
-        SubscribersBlock(EventCounter(243, 160, 0, 26))
+        SubscribersBlock(eventCounter = EventCounter(243, 160, 0, 26))
         Spacer(modifier = Modifier.height(16.dp))
-        SubscribersBlock(EventCounter(243, 160, 50, 0))
+        SubscribersBlock(eventCounter = EventCounter(243, 160, 50, 0))
     }
 }

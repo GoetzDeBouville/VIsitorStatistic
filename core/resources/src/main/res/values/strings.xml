@@ -15,11 +15,11 @@
     <string name="by_months">По месяцам</string>
 
     <string name="most_often_visit_your_profile">Чаще всех посещают Ваш профиль</string>
-    <string name="sec_and_age">Пол и возраст</string>
+    <string name="sex_and_age">Пол и возраст</string>
 
-    <string name="today">снизилось</string>
-    <string name="week">снизилось</string>
-    <string name="month">снизилось</string>
+    <string name="today">Сегодня</string>
+    <string name="week">Неделя</string>
+    <string name="month">Месяц</string>
     <string name="all_the_time">Все время</string>
 
     <string name="men">Мужчины</string>
@@ -34,6 +34,7 @@
     <string name="arrow_down">Стрелка вних</string>
 
     <string name="progress_icon">Иконка прогресса</string>
+    <string name="no_data_to_show">Нет данных для показа статистики</string>
 
     <string name="user_avatar">Аватар пользователя %s</string>
 </resources>

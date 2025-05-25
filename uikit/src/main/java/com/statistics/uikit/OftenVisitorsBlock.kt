@@ -49,7 +49,6 @@ fun OftenVisitorsBlock(
             .fillMaxWidth(),
         shape = RoundedCornerShape(16.dp),
         colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.onPrimary),
-        elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
     ) {
         Column {
             users.forEachIndexed { index, user ->

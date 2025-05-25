@@ -12,7 +12,7 @@ import javax.inject.Inject
 class GetStatisticDataUseCase @Inject constructor(
     private val userStatisticRepository: UserStatisticRepository
 ) {
-    operator fun invoke(): Flow<Result<List<Pair<User, EventStatistic>>, ErrorType>> {
+    operator fun invoke(): Flow<Result<Pair<Set<User>, List<EventStatistic>>, ErrorType>> {
         return userStatisticRepository.getUsersStatistic().combine(
             userStatisticRepository.getEventStatistic()
         ) { userResult, eventResult ->
@@ -24,15 +24,23 @@ class GetStatisticDataUseCase @Inject constructor(
                     val users = userResult.data
                     val events = eventResult.data
 
-                    val result = users.mapNotNull { user ->
-                        val statistic = events.find { it.userId == user.id }
-                        statistic?.let { user to it }
+                    val filteredEvents = events.filter { event ->
+                        users.any { user -> user.id == event.userId }
                     }
 
-                    Result.Success(result)
+                    val usersWithEvents = users.filter { user ->
+                        filteredEvents.any { event -> event.userId == user.id }
+                    }.toSet()
+
+                    Result.Success(usersWithEvents to filteredEvents)
                 }
+
                 else -> Result.Error(ErrorType.UNKNOWN_ERROR)
             }
         }
+    }
+
+    private companion object {
+        val TAG = GetStatisticDataUseCase::class.simpleName
     }
 }

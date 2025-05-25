@@ -5,7 +5,8 @@ import com.statistics.domain.models.User
 import com.statistics.uikit.ErrorScreenState
 
 internal data class ScreenState(
-    val itemList: List<Pair<User, EventStatistic>> = emptyList(),
     val isLoading: Boolean = false,
-    val errorType: ErrorScreenState? = null
+    val errorType: ErrorScreenState? = null,
+    val users: List<User> = emptyList(),
+    val events: List<EventStatistic> = emptyList()
 )

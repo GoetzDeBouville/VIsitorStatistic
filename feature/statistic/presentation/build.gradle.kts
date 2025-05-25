@@ -43,6 +43,7 @@ dependencies {
     implementation(project(":uikit"))
     implementation(project(":core:resources"))
     implementation(project(":core:domain:models"))
+    implementation(project(":core:utils"))
     implementation(project(":core:presentation:nav"))
 
     implementation(libs.androidx.core.ktx)

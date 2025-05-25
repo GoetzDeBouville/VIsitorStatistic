@@ -35,8 +35,7 @@ navigationCompose = "2.9.0"
 hiltNavigationCompose = "1.2.0"
 
 coilCompose = "3.2.0"
-vico = "2.1.2"
-pviotiCharts = "1.0.0"
+composeCharts = "0.1.7"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -90,10 +89,7 @@ coil = { module = "io.coil-kt.coil3:coil-compose", version.ref = "coilCompose" }
 coil-network = { module = "io.coil-kt.coil3:coil-network-okhttp", version.ref = "coilCompose" }
 
 # Chart
-vico-compose-m3 = { group = "com.patrykandpatrick.vico", name = "compose-m3", version.ref = "vico" }
-
-pvioti-compose-charts = { module = "com.github.pviotti:compose-charts", version.ref = "pviotiCharts" }
-
+compose-charts = { module = "io.github.ehsannarmani:compose-charts", version.ref = "composeCharts" }
 
 [bundles]
 ktor = [

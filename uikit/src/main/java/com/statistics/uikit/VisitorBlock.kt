@@ -26,11 +26,14 @@ import androidx.compose.ui.unit.dp
 import com.statistics.domain.models.EventCounter
 
 @Composable
-fun VisitorBlock(event: EventCounter) {
+fun VisitorBlock(
+    event: EventCounter,
+    modifier: Modifier = Modifier
+) {
     val isVisitorNumberIncreased =
         event.visitorsCounterCurrentMonth > event.visitorsCounterPrevMonth
     Card(
-        modifier = Modifier
+        modifier = modifier
             .fillMaxWidth(),
         shape = RoundedCornerShape(16.dp),
         colors = CardDefaults.cardColors(

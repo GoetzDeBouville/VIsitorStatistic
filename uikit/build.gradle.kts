@@ -50,7 +50,7 @@ dependencies {
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
 
-    implementation(libs.vico.compose.m3)
+    implementation(libs.compose.charts)
 
     implementation(libs.bundles.coil)
 

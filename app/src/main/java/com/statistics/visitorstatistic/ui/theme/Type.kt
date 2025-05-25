@@ -47,5 +47,11 @@ val Typography = Typography(
         fontWeight = FontWeight.SemiBold,
         fontSize = 15.sp,
         color = Color.Black
+    ),
+    labelSmall = TextStyle(
+        fontFamily = Gilroy,
+        fontWeight = FontWeight.Light,
+        fontSize = 13.sp,
+        color = Color.Black
     )
 )
