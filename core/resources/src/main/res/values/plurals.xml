@@ -6,4 +6,10 @@
         <item quantity="many">%s посетителей</item>
         <item quantity="other">%s посетителей</item>
     </plurals>
+    <plurals name="users_nums">
+        <item quantity="one">Пользователь</item>
+        <item quantity="few">Пользователя</item>
+        <item quantity="many">Пользователей</item>
+        <item quantity="other">Пользователей</item>
+    </plurals>
 </resources>

@@ -44,6 +44,7 @@ android {
 
 dependencies {
     implementation(project(":core:presentation:nav"))
+    implementation(project(":core:resources"))
     implementation(project(":feature:statistic:presentation"))
     implementation(project(":core:presentation:utils"))
 

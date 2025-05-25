@@ -4,5 +4,5 @@ data class EventCounter(
     val visitorsCounterCurrentMonth: Int,
     val visitorsCounterPrevMonth: Int,
     val subscribersCounterCurrentMonth: Int,
-    val subscribersCounterPrevMonth: Int
+    val unsubscribersCounterCurrentMonth: Int
 )

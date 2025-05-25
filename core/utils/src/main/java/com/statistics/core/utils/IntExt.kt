@@ -1,16 +1,16 @@
 package com.statistics.core.utils
 
-import android.util.Log
 import java.time.LocalDate
 
 @Suppress("TooGenericExceptionCaught", "MagicNumber")
-fun String.toDate(): LocalDate? {
+fun Int.toDate(): LocalDate? {
     var result: LocalDate? = null
+    val stringDate = this.toString()
 
-    if (this.length in 6..8) {
+    if (stringDate.length in 6..8) {
         try {
-            val year = this.takeLast(4).toInt()
-            val rest = this.dropLast(4)
+            val year = stringDate.takeLast(4).toInt()
+            val rest = stringDate.dropLast(4)
 
             val (day, month) = when (rest.length) {
                 2 -> Pair(rest[0].digitToInt(), rest[1].digitToInt())
@@ -21,7 +21,7 @@ fun String.toDate(): LocalDate? {
 
             result = LocalDate.of(year, month, day)
         } catch (e: Exception) {
-            Log.e("toDateFormatter", e.message.toString())
+            println("toDateFormatter ${e.message}")
         }
     }
 

@@ -38,6 +38,8 @@ android {
 
 dependencies {
     implementation(project(":core:resources"))
+    implementation(project(":core:domain:models"))
+    implementation(project(":core:utils"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -47,6 +49,10 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+
+    implementation(libs.vico.compose.m3)
+
+    implementation(libs.bundles.coil)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

@@ -6,7 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import com.statistics.core.presentation.utils.isWideDisplay
 import com.statistics.visitorstatistic.presentation.nav.AppNavGraph
-import com.statistics.visitorstatistic.ui.theme.VIsitorStatisticTheme
+import com.statistics.visitorstatistic.ui.theme.VisitorStatisticTheme
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -15,7 +15,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            VIsitorStatisticTheme {
+            VisitorStatisticTheme {
                 val isWideDisplay = isWideDisplay(this)
                 AppNavGraph(isWideDisplay)
             }
